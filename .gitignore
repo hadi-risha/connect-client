@@ -1,0 +1,16 @@
+# Node.js
+node_modules/
+dist/
+build/
+
+# Environment Variables
+# Ignore in client and server folders specifically
+client/node_modules/
+client/.env
+
+
+# Logs
+*.log
+
+
+

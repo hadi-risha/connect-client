@@ -1,0 +1,209 @@
+/* **********24th one, it is perfect for session card, i mean the like one shows card********* */
+.card {
+    --accent-color: #ffd426;    
+    transition: all 0.5s ease-in-out;
+}
+
+.card .image-container img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.card .image-container .price {
+    position: absolute;
+    right: 0.7rem;
+    bottom: -1rem;
+    background: white;
+    color: var(--accent-color);
+    font-weight: 900;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    border-radius: 1rem 1rem 2rem 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 15px 0px;
+}
+
+.card .favorite {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.card .favorite input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.card .favorite input:checked~svg {
+    animation: bouncing 0.5s;
+    fill: rgb(255, 95, 95);
+    filter: drop-shadow(0px 3px 1px rgba(53, 53, 53, 0.14));
+}
+
+.card .favorite svg {
+    fill: #a8a8a8;
+}
+
+.card .content {
+    padding: 0px 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.card .content .brand {
+    font-weight: 900;
+    color: #a6a6a6;
+}
+
+.card .content .product-name {
+    font-weight: 700;
+    color: #666666;
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+
+    /* display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 7;
+    text-overflow: ellipsis; */
+}
+
+.card .button-container {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.card .button-container .button {
+    border-radius: 1.4rem 1.4rem 0.7rem 0.7rem;
+    border: none;
+    padding: 0.5rem 0;
+    background: var(--accent-color);
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.card .button-container .button:hover {
+    background: orangered;
+}
+
+.card .button-container .buy-button {
+    flex: auto;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+@keyframes bouncing {
+
+    from,
+    to {
+        transform: scale(1, 1);
+    }
+
+    25% {
+        transform: scale(1.5, 2.1);
+    }
+
+    50% {
+        transform: scale(2.1, 1.5);
+    }
+
+    75% {
+        transform: scale(1.5, 2.05);
+    }
+}
+
+
+
+
+
+
+/* ********imported pagination button style******** */
+/* From Uiverse.io by Z4drus */
+.button-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.button-3d {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    border-width: 0;
+    padding: 0 8px;
+    min-width: 4em;
+    min-height: 4em;
+    box-sizing: border-box;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.button-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    padding: 8px 16px;
+    transform: translateY(0);
+    color: #fff;
+    background-image: linear-gradient(145deg, #6a11cb, #2575fc);
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    transition: transform 0.3s, border-radius 0.3s, background 10s;
+}
+
+.button-3d:active .button-top {
+    border-radius: 10px 10px 8px 8px / 8px;
+    transform: translateY(2px);
+    background-image: linear-gradient(145deg, #2575fc, #6a11cb);
+}
+
+.button-bottom {
+    position: absolute;
+    z-index: 1;
+    bottom: 4px;
+    left: 4px;
+    border-radius: 20px;
+    padding-top: 6px;
+    width: calc(100% - 8px);
+    height: calc(100% - 10px);
+    background-image: linear-gradient(145deg, #2575fc, #6a11cb);
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+    transition: border-radius 0.2s, padding-top 0.2s;
+}
+
+.button-base {
+    position: absolute;
+    z-index: 0;
+    top: 4px;
+    left: 0;
+    border-radius: 20px;
+    width: 100%;
+    height: calc(100% - 4px);
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.75),
+        inset 0 2px 2px rgba(0, 0, 0, 0.25);
+    transition: border-radius 0.2s, padding-top 0.2s;
+}
+
+.button-3d:active .button-bottom {
+    border-radius: 10px 10px 8px 8px / 8px;
+    padding-top: 0;
+}
+
+.button-3d:active .button-base {
+    border-radius: 10px 10px 8px 8px / 8px;
+}

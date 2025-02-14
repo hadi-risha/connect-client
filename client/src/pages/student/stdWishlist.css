@@ -1,0 +1,7 @@
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
