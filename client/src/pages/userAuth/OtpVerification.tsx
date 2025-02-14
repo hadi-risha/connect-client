@@ -179,7 +179,7 @@ const OtpVerification = () => {
                                     onChange={(e) => handleChange(e, index)}
                                     onKeyDown={(e) => handleKeyDown(e, index)}
                                     ref={(el) => (inputRefs.current[index] = el)}
-                                    className="mx-1 w-10 h-10 p-2 text-center border-2 rounded border-gray-400 bg-white text-black"
+                                    className="bg-gray-100 mx-1 w-10 h-10 p-2 text-center border-2 rounded border-gray-400  text-black"
                                     style={{
                                         MozAppearance: 'textfield',
                                         appearance: 'none',
