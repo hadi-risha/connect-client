@@ -1,7 +1,7 @@
 const config = {
-  backendUrl: process.env.REACT_APP_BACKEND_URL || "http://localhost:3001/api",
-  backendBaseUrl: process.env.REACT_APP_BACKEND_BASE_URL || "http://localhost:3001",
-  googleAuthCallback: process.env.REACT_APP_GOOGLE_AUTH_CALLBACK || "http://localhost:3001/api/auth/google/callback",
+  backendUrl: process.env.REACT_APP_BACKEND_URL || "https://connect-server-y38z.onrender.com/api",
+  backendBaseUrl: process.env.REACT_APP_BACKEND_BASE_URL || "https://connect-server-y38z.onrender.com",
+  googleAuthCallback: process.env.REACT_APP_GOOGLE_AUTH_CALLBACK || "https://connect-server-y38z.onrender.com/api/auth/google/callback",
   googleClientId: process.env.REACT_APP_GOOGLE_CLIENT_ID,
   googleClientSecret: process.env.REACT_APP_GOOGLE_CLIENT_SECRET,
   frontendUrl: process.env.REACT_APP_FRONTEND_URL,
