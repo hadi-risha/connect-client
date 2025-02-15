@@ -83,7 +83,7 @@ function UserRoutes({ token, userRole }: UserRoutesProps) {
 
   if (token) {
     // If token exists, prevent access to login routes
-    return <Navigate to="/" replace />;
+    return <Navigate to={`/${userRole}/home`} replace />;
   }
 
 
