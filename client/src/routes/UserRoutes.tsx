@@ -81,11 +81,6 @@ function UserRoutes({ token, userRole }: UserRoutesProps) {
     return <Navigate to="/" replace />;
   }
 
-  if (token) {
-    // If token exists, prevent access to login routes
-    return <Navigate to={`/${userRole}/home`} replace />;
-  }
-
 
   // If the route starts with '/' (base URL) or '/login'
   if (path === "/" || path.startsWith("/login")) {
