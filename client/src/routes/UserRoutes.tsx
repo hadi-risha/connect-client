@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Header from "../components/user/UserHeader";
 import ProtectedRoute from './ProtectedRoute';
 // *** COMMON PAGES *** 
@@ -67,6 +67,8 @@ interface UserRoutesProps {
 }
 
 function UserRoutes({ token, userRole }: UserRoutesProps) {
+  const location = useLocation();
+  const path = location.pathname;
 
   console.log("token ", token);
 
@@ -77,6 +79,12 @@ function UserRoutes({ token, userRole }: UserRoutesProps) {
   if (!token || !userRole) {
     console.log("!token");
     return <Navigate to="/" replace />;
+  }
+
+
+  // If the route starts with '/' (base URL) or '/login'
+  if (path === "/" || path.startsWith("/login")) {
+    return token ? <Navigate to={`/${userRole}/home`} replace /> : <Navigate to="/login" replace />;
   }
 
   return (
@@ -163,9 +171,9 @@ function UserRoutes({ token, userRole }: UserRoutesProps) {
 
 
 
-                {/* <Route path="*" element={<Navigate to="/student/home" replace />} /> */}
+                <Route path="*" element={<Navigate to="/student/home" replace />} />
                 {/* Catch-All Route for Undefined Paths */}
-                <Route path="*" element={<NotFound />} />
+                {/* <Route path="*" element={<NotFound />} /> */}
               </>
 
             ) : userRole === "instructor" ? (
@@ -201,17 +209,19 @@ function UserRoutes({ token, userRole }: UserRoutesProps) {
 
                 <Route path="/instructor/wallet" element={<ProtectedRoute><Wallet /></ProtectedRoute>} /> 
                 
-                {/* <Route path="*" element={<Navigate to="/instructor/home" replace />} /> */}
+                <Route path="*" element={<Navigate to="/instructor/home" replace />} />
                 {/* Catch-All Route for Undefined Paths */}
-                <Route path="*" element={<NotFound />} />
+                {/* <Route path="*" element={<NotFound />} /> */}
               </>
             ) : (
               <>
                 {/* {console.error("error in user routes")} */}
-                <Route path="*" element={<Navigate to="/login" replace />} />
+                {/* <Route path="*" element={<Navigate to="/login" replace />} /> */}
+                <Navigate to="/login" replace />
               </>
             )}
-
+          {/* Catch-All Route for Completely Invalid Paths */}
+          <Route path="*" element={<NotFound />} />
             
           </Routes>
         </div>
